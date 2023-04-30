@@ -1,71 +1,71 @@
 import ballerina/test;
 
 @test:Config
-function EmptyString() {
+function emptyString() {
     test:assertTrue(isIsogram(""));
 }
 
 @test:Config
-function IsogramWithOnlyLowerCaseCharacters() {
+function isogramWithOnlyLowerCaseCharacters() {
     test:assertTrue(isIsogram("isogram"));
 }
 
 @test:Config
-function WordWithOneDuplicatedCharacter() {
+function wordWithOneDuplicatedCharacter() {
     test:assertFalse(isIsogram("eleven"));
 }
 
 @test:Config
-function WordWithOneDuplicatedCharacterFromTheEndOfTheAlphabet() {
+function wordWithOneDuplicatedCharacterFromTheEndOfTheAlphabet() {
     test:assertFalse(isIsogram("zzyzx"));
 }
 
 @test:Config
-function LongestReportedEnglishIsogram() {
+function longestReportedEnglishIsogram() {
     test:assertTrue(isIsogram("subdermatoglyphic"));
 }
 
 @test:Config
-function WordWithDuplicatedCharacterInMixedCase() {
+function wordWithDuplicatedCharacterInMixedCase() {
     test:assertFalse(isIsogram("Alphabet"));
 }
 
 @test:Config
-function WordWithDuplicatedCharacterInMixedCaseLowercaseFirst() {
+function wordWithDuplicatedCharacterInMixedCaseLowercaseFirst() {
     test:assertFalse(isIsogram("alphAbet"));
 }
 
 @test:Config
-function HypotheticalIsogrammicWordWithHyphen() {
+function hypotheticalIsogrammicWordWithHyphen() {
     test:assertTrue(isIsogram("thumbscrew-japingly"));
 }
 
 @test:Config
-function HypotheticalWordWithDuplicatedCharacterFollowingHyphen() {
+function hypotheticalWordWithDuplicatedCharacterFollowingHyphen() {
     test:assertFalse(isIsogram("thumbscrew-jappingly"));
 }
 
 @test:Config
-function IsogramWithDuplicatedHyphen() {
+function isogramWithDuplicatedHyphen() {
     test:assertTrue(isIsogram("six-year-old"));
 }
 
 @test:Config
-function MadeUpNameThatIsAnIsogram() {
+function madeUpNameThatIsAnIsogram() {
     test:assertTrue(isIsogram("Emily Jung Schwartzkopf"));
 }
 
 @test:Config
-function DuplicatedCharacterInTheMiddle() {
+function duplicatedCharacterInTheMiddle() {
     test:assertFalse(isIsogram("accentor"));
 }
 
 @test:Config
-function SameFirstAndLastCharacters() {
+function sameFirstAndLastCharacters() {
     test:assertFalse(isIsogram("angola"));
 }
 
 @test:Config
-function WordWithDuplicatedCharacterAndWithTwoHyphens() {
+function wordWithDuplicatedCharacterAndWithTwoHyphens() {
     test:assertFalse(isIsogram("up-to-date"));
 }
